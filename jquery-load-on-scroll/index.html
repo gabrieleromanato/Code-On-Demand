@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery: load on scroll</title>
+  <meta charset="utf-8" />
+  <style type="text/css" media="screen">
+body {
+	margin: 2.5em auto;
+	max-width: 40em;
+	font-family: sans-serif;
+	line-height: 1.5;
+}
+  </style>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript">
+(function( $ ) {
+	$( document ).ready(function() {
+	var loading = false;
+	sessionStorage.setItem( "index", "1" );
+
+$( window ).scroll(function() {
+
+	var winTop = $( window ).scrollTop();
+	var winHeight = $( window ).height();
+	var docHeight = $( document ).height();
+
+
+	var diff = ( winTop + winHeight ) + 250;
+
+	
+
+
+	if ( diff  >= docHeight ) {
+		if ( loading == false ) {
+			loading = true;
+			
+
+			$.get( "ajax.php", { index: sessionStorage.getItem( "index" ) }).done( function( html ) {
+				$( "body" ).append( html );
+				sessionStorage.setItem( "index", parseInt( sessionStorage.getItem( "index"), 10 ) + 1 );
+				loading = false;
+
+			});
+		}
+	}
+});
+    
+});
+
+})( jQuery );
+
+  </script>
+</head>
+<body>
+<p>“The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us. His grey eyes shone and twinkled, and his usually pale face was flushed and animated. The fire burned brightly, and the soft radiance of the incandescent lights in the lilies of silver caught the bubbles that flashed and passed in our glasses.</p>
+<p>Our chairs, being his patents, embraced and caressed us rather than submitted to be sat upon, and there was that luxurious after-dinner atmosphere when thought roams gracefully free of the trammels of precision. And he put it to us in this way—marking the points with a lean forefinger—as we sat and lazily admired his earnestness over this new paradox (as we thought it:) and his fecundity.</p>
+<p>`You must follow me carefully. I shall have to controvert one or two ideas that are almost universally accepted. The geometry, for instance, they taught you at school is founded on a misconception.”</p>
+<p>“The drama of "Lear" begins with a scene giving the conversation between two courtiers, Kent and Gloucester. Kent, pointing to a young man present, asks Gloucester whether that is not his son. Gloucester says that he has often blushed to acknowledge the young man as his son, but has now ceased doing so. Kent says he "can not conceive him."</p>
+<p>Then Gloucester in the presence of this son of his says: "The fellow's mother could, and grew round-wombed, and had a son for her cradle ere she had a husband for her bed." "I have another, a legitimate son," continues Gloucester, "but altho this one came into the world before he was sent for, his mother was fair and there was good sport at his making, and therefore I acknowledge this one also.”</p>
+<p>“I always liked McArdle, the crabbed, old, round-backed, red-headed news editor, and I rather hoped that he liked me. Of course, Beaumont was the real boss; but he lived in the rarefied atmosphere of some Olympian height from which he could distinguish nothing smaller than an international crisis or a split in the Cabinet.</p>
+<p>Sometimes we saw him passing in lonely majesty to his inner sanctum, with his eyes staring vaguely and his mind hovering over the Balkans or the Persian Gulf. He was above and beyond us. But McArdle was his first lieutenant, and it was he that we knew.”</p>
+<p>`You must follow me carefully. I shall have to controvert one or two ideas that are almost universally accepted. The geometry, for instance, they taught you at school is founded on a misconception.”</p>
+<p>“The drama of "Lear" begins with a scene giving the conversation between two courtiers, Kent and Gloucester. Kent, pointing to a young man present, asks Gloucester whether that is not his son. Gloucester says that he has often blushed to acknowledge the young man as his son, but has now ceased doing so. Kent says he "can not conceive him."</p>
+<p>Then Gloucester in the presence of this son of his says: "The fellow's mother could, and grew round-wombed, and had a son for her cradle ere she had a husband for her bed." "I have another, a legitimate son," continues Gloucester, "but altho this one came into the world before he was sent for, his mother was fair and there was good sport at his making, and therefore I acknowledge this one also.”</p>
+<p>“I always liked McArdle, the crabbed, old, round-backed, red-headed news editor, and I rather hoped that he liked me. Of course, Beaumont was the real boss; but he lived in the rarefied atmosphere of some Olympian height from which he could distinguish nothing smaller than an international crisis or a split in the Cabinet.</p>
+<p>Sometimes we saw him passing in lonely majesty to his inner sanctum, with his eyes staring vaguely and his mind hovering over the Balkans or the Persian Gulf. He was above and beyond us. But McArdle was his first lieutenant, and it was he that we knew.”</p>
+<p>“The Time Traveller (for so it will be convenient to speak of him) was expounding a recondite matter to us. His grey eyes shone and twinkled, and his usually pale face was flushed and animated. The fire burned brightly, and the soft radiance of the incandescent lights in the lilies of silver caught the bubbles that flashed and passed in our glasses.</p>
+<p>Our chairs, being his patents, embraced and caressed us rather than submitted to be sat upon, and there was that luxurious after-dinner atmosphere when thought roams gracefully free of the trammels of precision. And he put it to us in this way—marking the points with a lean forefinger—as we sat and lazily admired his earnestness over this new paradox (as we thought it:) and his fecundity.</p>
+<p>`You must follow me carefully. I shall have to controvert one or two ideas that are almost universally accepted. The geometry, for instance, they taught you at school is founded on a misconception.”</p>
+<p>“The drama of "Lear" begins with a scene giving the conversation between two courtiers, Kent and Gloucester. Kent, pointing to a young man present, asks Gloucester whether that is not his son. Gloucester says that he has often blushed to acknowledge the young man as his son, but has now ceased doing so. Kent says he "can not conceive him."</p>
+<p>Then Gloucester in the presence of this son of his says: "The fellow's mother could, and grew round-wombed, and had a son for her cradle ere she had a husband for her bed." "I have another, a legitimate son," continues Gloucester, "but altho this one came into the world before he was sent for, his mother was fair and there was good sport at his making, and therefore I acknowledge this one also.”</p>
+<p>“I always liked McArdle, the crabbed, old, round-backed, red-headed news editor, and I rather hoped that he liked me. Of course, Beaumont was the real boss; but he lived in the rarefied atmosphere of some Olympian height from which he could distinguish nothing smaller than an international crisis or a split in the Cabinet.</p>
+<p>Sometimes we saw him passing in lonely majesty to his inner sanctum, with his eyes staring vaguely and his mind hovering over the Balkans or the Persian Gulf. He was above and beyond us. But McArdle was his first lieutenant, and it was he that we knew.”</p>
+<p>`You must follow me carefully. I shall have to controvert one or two ideas that are almost universally accepted. The geometry, for instance, they taught you at school is founded on a misconception.”</p>
+<p>“The drama of "Lear" begins with a scene giving the conversation between two courtiers, Kent and Gloucester. Kent, pointing to a young man present, asks Gloucester whether that is not his son. Gloucester says that he has often blushed to acknowledge the young man as his son, but has now ceased doing so. Kent says he "can not conceive him."</p>
+<p>Then Gloucester in the presence of this son of his says: "The fellow's mother could, and grew round-wombed, and had a son for her cradle ere she had a husband for her bed." "I have another, a legitimate son," continues Gloucester, "but altho this one came into the world before he was sent for, his mother was fair and there was good sport at his making, and therefore I acknowledge this one also.”</p>
+<p>“I always liked McArdle, the crabbed, old, round-backed, red-headed news editor, and I rather hoped that he liked me. Of course, Beaumont was the real boss; but he lived in the rarefied atmosphere of some Olympian height from which he could distinguish nothing smaller than an international crisis or a split in the Cabinet.</p>
+<p>Sometimes we saw him passing in lonely majesty to his inner sanctum, with his eyes staring vaguely and his mind hovering over the Balkans or the Persian Gulf. He was above and beyond us. But McArdle was his first lieutenant, and it was he that we knew.”</p>	
+</body>
+</html>
