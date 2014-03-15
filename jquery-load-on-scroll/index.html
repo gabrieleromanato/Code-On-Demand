@@ -15,37 +15,38 @@ body {
   <script type="text/javascript">
 (function( $ ) {
 	$( document ).ready(function() {
-	var loading = false;
-	sessionStorage.setItem( "index", "1" );
+	
+		var loading = false;
+		sessionStorage.setItem( "index", "1" );
 
-$( window ).scroll(function() {
+		$( window ).scroll(function() {
 
-	var winTop = $( window ).scrollTop();
-	var winHeight = $( window ).height();
-	var docHeight = $( document ).height();
+			var winTop = $( window ).scrollTop();
+			var winHeight = $( window ).height();
+			var docHeight = $( document ).height();
 
 
-	var diff = ( winTop + winHeight ) + 250;
+			var diff = ( winTop + winHeight ) + 250;
 
 	
 
 
-	if ( diff  >= docHeight ) {
-		if ( loading == false ) {
-			loading = true;
+			if ( diff  >= docHeight ) {
+				if ( loading == false ) {
+					loading = true;
 			
 
-			$.get( "ajax.php", { index: sessionStorage.getItem( "index" ) }).done( function( html ) {
-				$( "body" ).append( html );
-				sessionStorage.setItem( "index", parseInt( sessionStorage.getItem( "index"), 10 ) + 1 );
-				loading = false;
+					$.get( "ajax.php", { index: sessionStorage.getItem( "index" ) }).done( function( html ) {
+						$( "body" ).append( html );
+						sessionStorage.setItem( "index", parseInt( sessionStorage.getItem( "index"), 10 ) + 1 );
+						loading = false;
 
-			});
-		}
-	}
-});
+					});
+				}
+			}
+		});
     
-});
+	});
 
 })( jQuery );
 
