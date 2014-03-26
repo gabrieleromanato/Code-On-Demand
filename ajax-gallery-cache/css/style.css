@@ -1,0 +1,36 @@
+#gallery-wrapper {
+  	margin: 2em auto;
+  	padding: 0;
+  	max-width: 850px;
+  }
+  #gallery {
+  	width: 100%;
+  	margin: 0;
+  	padding: 0;
+  	list-style: none;
+  	overflow: hidden;
+  }
+  
+  #gallery li {
+  	 float: left;
+  	 margin: 5px;
+  	 width: 200px;
+  	 height: 150px;
+  }
+  
+  #pagination {
+  	clear: both;
+  	padding: 1em 0;
+  	text-align: center;
+  }
+  
+  #pagination a {
+  	text-decoration: none;
+  	color: #08c;
+  	margin-right: 0.4em;
+  }
+  
+  #pagination a.current {
+  	font-weight: bold;
+  	color: #000;
+  }
