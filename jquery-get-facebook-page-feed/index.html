@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic);
+
+body {
+	font: 100%/1 'Lato', sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #eee;
+	color: #000;
+}	
+
+a:link,
+a:visited {
+	color: #44bbff;
+	text-decoration: none;
+
+}
+
+a:hover {
+	color: #6dc5dc;
+	text-decoration: underline;
+}
+
+#facebook {
+	margin: 2em auto;
+	max-width: 960px;
+	padding: 1em;
+	background: #fff;
+	border: 1px solid #dedede;
+	color: #333;
+	position: relative;
+	min-height: 15em;
+}
+
+.facebook-status {
+	margin-bottom: 1em;
+	padding-bottom: 0.3em;
+	border-bottom: 1px solid #dedede;
+	padding-left: 48px;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAG7AAABuwE67OPiAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAORQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEmT/QAAAEt0Uk5TAAMFCAoMDRQVGx8nKDEyMzc8QEJMTU5XWFxiZGhrbHBydHd6fICBiYqOmJmanJ+kq7Cztr7AwcLL0NLV2ODj5ejq7/L09vj5+/3+UOaCXAAAAnFJREFUWMOtV31fAUEQXkJFiZQSEnWiqyhOyslboe77f5/s7IpzM3vnt/afvd/OzMPOyzM7jBErmi3VGm17MrHbjVopG2VbrcNCa+q41rRVOAxqHSl3fx1k/XbLkQDmofzAIdcgH/KzP+s5ytU7U5rHrZXqp1nJZRKxWCKTq5ifq3MrTtunR0ut92rSLUpW35eyUZqyv5pJlWYCEyeaUjy7wr1Xl/JOivqFVEeq1BFfhl6ErH+uctJ5X2i9eBHk73cO1FE6kH+i7rm/ODfDfnEOm0Jzww9p8N+8GCRTi3PwpCsWcRG/YrBcL4porueDyB8zaLWIW1hr+Sv8Fw4KEBae/M/qEOR/H/X//vXzx/xnPrtzxwKi2VvGMg94aPyPZdwdYyMf4DAv6x/qt4PZn3w7OACDSwwEP5RBA83fV4cCSMFpGb67UD+Y/ZFDAjCorC7wH/AXWn8XYDt+Mgzj1FObwHKcJwtQ/2i4KgBwiccS+KGw+GjxjyqqYwDAHg5Q5bLWgv+Bv5PbAySB7aMsC/zHtgdgwJNZVlJUgRoAKqLEanyreMX3w+HwCwCGfN0SLq6xBt9yXvGDux8gPJrj5w3W5lvGFwCh8gw/bzObSKMNAKRUIZVsNuFbzA9gjDgxxgUTEuDGsixRy2+Lr0cawCYrwS+M8gqUE/0BpBOpMPoDyDBSieQPIBNJO5W1i0m7nLUJRUVpSoB/SlOQqgpgRaoKWlcBrGhd0VgUAOuNhW5tCoD11kY3VxrA1Vzp9k4CbLR37QeG/hNH/5Gl/czTf2jqP3X1H9vaz339gWMHI4/+0KU/9u1g8NQffXcwfG83/v8BFCpUw4TIcS0AAAAASUVORK5CYII=') no-repeat 0 0;
+	background-size: 40px 40px;
+	line-height: 1.4;
+}
+
+#facebook > .facebook-status:last-child {
+	border-bottom: none;
+}
+
+#loader {
+	width: 64px;
+	height: 64px;
+	background: #aaa;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -32px;
+	margin-top: -32px;
+	-webkit-animation: loading 400ms ease-out infinite alternate;
+	-moz-animation: loading 400ms ease-out infinite alternate;
+	-ms-animation: loading 400ms ease-out infinite alternate;
+		animation: loading 400ms ease-out infinite alternate;
+}
+
+@-webkit-keyframes loading {
+	from {
+		width: 64px;
+		height: 64px;
+		margin-left: -32px;
+		margin-top: -32px;
+		opacity: 1;
+	}
+	
+	to {
+		width: 58px;
+		height: 58px;
+		margin-left: -29px;
+		margin-top: -29px;
+		opacity: 0.5;
+	}
+}
+
+@-moz-keyframes loading {
+	from {
+		width: 64px;
+		height: 64px;
+		margin-left: -32px;
+		margin-top: -32px;
+		opacity: 1;
+	}
+	
+	to {
+		width: 58px;
+		height: 58px;
+		margin-left: -29px;
+		margin-top: -29px;
+		opacity: 0.5;
+	}
+}
+
+@-ms-keyframes loading {
+	from {
+		width: 64px;
+		height: 64px;
+		margin-left: -32px;
+		margin-top: -32px;
+		opacity: 1;
+	}
+	
+	to {
+		width: 58px;
+		height: 58px;
+		margin-left: -29px;
+		margin-top: -29px;
+		opacity: 0.5;
+	}
+}
+
+@keyframes loading {
+	from {
+		width: 64px;
+		height: 64px;
+		margin-left: -32px;
+		margin-top: -32px;
+		opacity: 1;
+	}
+	
+	to {
+		width: 58px;
+		height: 58px;
+		margin-left: -29px;
+		margin-top: -29px;
+		opacity: 0.5;
+	}
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<div id="facebook">
+	<div id="loader"></div>
+</div>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.facebook.js"></script>
+<script type="text/javascript">
+(function( $ ) {
+	$(function() {
+		$( "#facebook" ).facebook();
+	});
+	
+})( jQuery );
+</script>
+	
+</body>
+</html>
