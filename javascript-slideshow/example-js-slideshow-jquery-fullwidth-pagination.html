@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+html, body {
+	margin: 0;
+	padding: 0;
+}
+.slider {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.slider-wrapper {
+	width: 100%;
+	height: 400px;
+	position: relative;
+}
+
+.slide {
+	float: left;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.slider-nav {
+	margin: 1.5em 0;
+	text-align: center;	
+}
+
+.slider-nav a {
+	width: 2em;
+	height: 2em;
+	line-height: 2;
+	text-align: center;
+	border: 1px solid #ddd;
+	color: #000;
+	text-decoration: none;
+	background: #f5f5f5;
+	background: linear-gradient( #f5f5f5, #fff );
+	display: inline-block;
+	margin-right: 0.7em;
+}
+
+.slider-nav a.current {
+	border-color: #000;
+	background: #fff;
+	background: linear-gradient( #fff, #f5f5f5 );
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+(function( $ ) {
+	$.fn.slideshow = function( options ) {
+		options = $.extend({
+			wrapper: ".slider-wrapper",
+			slides: ".slide",
+			nav: ".slider-nav",
+			speed: 500,
+			easing: "linear"
+			
+		}, options);
+		
+		var slideTo = function( slide, element ) {
+			var $currentSlide = slide;
+			
+			$( options.wrapper, element ).
+			animate({
+				left: - $currentSlide.position().left
+			}, options.speed, options.easing );	
+			
+		};
+		
+		return this.each(function() {
+			var $element = $( this ),
+				$navigationLinks = $( "a", options.nav ),
+				total = $( options.slides, $element ).length;
+				
+				$( options.slides, $element ).width( $( window ).width() ).each(function() {
+					var $slide = $( this );
+					var image = $slide.data( "image" );
+					$slide.css( "backgroundImage", "url(" + image + ")" );
+				});
+				$( options.wrapper, $element ).width( $( window ).width() * total );
+				
+				$navigationLinks.on( "click", function( e ) {
+					e.preventDefault();
+					var $a = $( this ),
+						$slide = $( $a.attr( "href" ) );
+						
+						slideTo( $slide, $element );
+						$a.addClass( "current" ).siblings().
+						removeClass( "current" );
+					
+				});
+
+			
+		});
+	};
+	
+	$(function() {
+		$( "#main-slider" ).slideshow();
+		
+	});
+	
+})( jQuery );
+</script>
+</head>
+<body>
+<div class="slider" id="main-slider"><!-- outermost container element -->
+	<div class="slider-wrapper"><!-- innermost wrapper element -->
+		<div class="slide" id="slide-1" data-image="http://lorempixel.com/1024/400/animals"></div><!-- slides -->
+		<div class="slide" id="slide-2" data-image="http://lorempixel.com/1024/400/business"></div>
+		<div class="slide" id="slide-3" data-image="http://lorempixel.com/1024/400/city"></div>
+		<div class="slide" id="slide-4" data-image="http://lorempixel.com/1024/400/people"></div>
+		<div class="slide" id="slide-5" data-image="http://lorempixel.com/1024/400/technics"></div>
+	</div>
+	<div class="slider-nav"><!-- Pagination -->
+		<a href="#slide-1">1</a>
+		<a href="#slide-2">2</a>
+		<a href="#slide-3">3</a>
+		<a href="#slide-4">4</a>
+		<a href="#slide-5">5</a>	
+	</div>
+</div>		
+</body>
+</html>

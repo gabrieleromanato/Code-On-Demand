@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+.slider {
+	width: 1024px;
+	overflow: hidden;
+	margin: 2em auto;
+}
+
+.slider-wrapper {
+	width: 9999px;
+	height: 683px;
+	position: relative;
+	transition: left 500ms linear;
+}
+
+.slide {
+	float: left;
+	position: relative;
+	width: 1024px;
+	height: 683px;
+}
+
+.slider-nav {
+	height: 40px;
+	width: 100%;
+	margin-top: 1.5em;
+}
+
+.slider-nav button {
+	border: none;
+	display: block;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	text-indent: -9999em;
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+
+.slider-nav button:focus {
+	outline-style: none;
+}
+
+.slider-nav button.slider-previous {
+	float: left;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTc2QkYxMDcyRUNEMTFFNDk4RTdGNTFGNjdGRjYzREYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTc2QkYxMDgyRUNEMTFFNDk4RTdGNTFGNjdGRjYzREYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBNzZCRjEwNTJFQ0QxMUU0OThFN0Y1MUY2N0ZGNjNERiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBNzZCRjEwNjJFQ0QxMUU0OThFN0Y1MUY2N0ZGNjNERiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PucyzUQAAAI7SURBVHja1JlNK0RRGMfPXEphksb7y8JLUhZKUj6B3WyUJMonIMuxm4XyUljMN6BBKQsR8wVsJDZYDBZGUTY2pDD+Z/rfuqTcuee5M3ee+jV17j3/+7/33Puc55wJKe8xDEbAIGgETaCNxzLgETyBU3AMTrxcJJTn+e1gDkyBOrZdgDR4ALds66TZLtDPtmewAdbAvRKOCFgCWfAOdsE0CLvoG+a5u+ybpVZEytw4RTWroMFAq4Eatt64qbkFCu2BbsER6aZmltfIOyyHQEz5FzHHA7Dy6WibG1X+x6jDpKtYZIeoKlxEec1Ft3cTV4WP+H+jptPBF0ip4kWKHv5MX8u8g5YiGmyhh+XfB5p5IKGKHwl6aXY2roMPlzODm9DiK5yf840wvaw7G1/AvpC5CnDDp9DqUWOfnnIxQLEJAXP1rGTeQI+BzgQ9Ddif9yeoMTSnh+aKwv2GWjX0lEt3R+DcULAa3NFcr9Croj0dWSx70oal2Bk/jD5wLWRQv8cRi1/ag0eRWo6ALkyHwKVgusnYWUAPy4xHkUP27/AhH85qbctQJMnfeb+ydjkfZZfH/ptMqlugSihVKce6JlPO1VergdA2J/gd3vCYkME2ehNJMzom+T4mJdOMZKJ2LrC2JRO15FSnOMRa7wBUSkx10sWC4jr41eDj+1Es+FFu2RmiTKrcCnzBGviSvyQWTYFfdpbEwr0ktj5KYvPIjsBuv/01vwZyA9O57ijKFnDgN9FDBk+1IH9DfAswAH+nuqbSIF3xAAAAAElFTkSuQmCC');
+	display: none;
+
+}
+
+.slider-nav button.slider-next {
+	float: right;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTc2QkYxMDMyRUNEMTFFNDk4RTdGNTFGNjdGRjYzREYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTc2QkYxMDQyRUNEMTFFNDk4RTdGNTFGNjdGRjYzREYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBNzZCRjEwMTJFQ0QxMUU0OThFN0Y1MUY2N0ZGNjNERiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBNzZCRjEwMjJFQ0QxMUU0OThFN0Y1MUY2N0ZGNjNERiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PggGK0EAAAIwSURBVHja1JlNK0RRHMbPXFNKJgnjZcYCk5SFkpRPYGcjTKJ8ArIcOwvlpbyUb6AmacpChC9gI7HBwrAwirKxIYXxnOm5dWdSZu75z8ydp36N7p3z3OfeM/ec/zn8yr2GwDAYAM2gBYR5LgWewQs4ByfgzM1FfAV+vx3Mg2nQyGNXIMlQ9zzWCUIgAvp47BXsgA3wqITVAFZAGnyCBJgBgTzaBvjdBNum6dUgFS5KU806CBp4Belh+0VNwy3RaJ/dJaUIPdO8RsGyHAYxVTzFHA/AKqShHW5UFV+jjpB5aZkNRlTpNMJrLud7N4uq9Fr8r9f0cPADTlX5dMoMfw5fq7yDtjIGbGOG1dwTrTyxrcqvbWZpdR7cBF95zgy50nPwWq6hgQLMsuk8+AYOXBqGeMd6Pq4WCnnATBn18wKTBobd4IMFQ5NAwElm6rdf729QZ2jaR9Mblz8Vp+qYKTPcHYNLoa7pYcgHUGvopTMdWyx7kkIBb0EvX5gLw5LqTre3+BamBIeJazAIutg79S59npgt0yVzRRjPOuh95LL9rG5vqeJpgZ9xUyO9PtgSDhcXqJh1pkc/V19hwXB7YAxM8G+3CjGb6DBjP7kpAa9LZhMbqHelFkK5A7XpVFcDDukxLtQTWVOdabGgx7t3rn2llFUsmJZbVcAvGO7PcsvzBavnS/6KWDR5ftlZEQv3itj6qIjNI1ue3X5zytMbmLbKtgXs+U10n8FTLcm/IX4FGADop7oo5vCO1wAAAABJRU5ErkJggg==');
+}	
+
+</style>
+<script type="text/javascript">
+(function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			
+			this.actions();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			this.wrapper.style.left = "-" + currentSlide.offsetLeft + "px";
+		},
+		actions: function() {
+			var self = this;
+			self.next.addEventListener( "click", function() {
+				self.index++;
+				self.previous.style.display = "block";
+				
+				if( self.index == self.total - 1 ) {
+					self.index = self.total - 1;
+					self.next.style.display = "none";
+				}
+				
+				self._slideTo( self.index );
+				
+			}, false);
+			
+			self.previous.addEventListener( "click", function() {
+				self.index--;
+				self.next.style.display = "block";
+				
+				if( self.index == 0 ) {
+					self.index = 0;
+					self.previous.style.display = "none";
+				}
+				
+				self._slideTo( self.index );
+				
+			}, false);
+		}
+		
+		
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#main-slider" );
+		
+	});
+	
+	
+})();
+
+</script>
+</head>
+<body>
+<div class="slider" id="main-slider"><!-- outermost container element -->
+	<div class="slider-wrapper"><!-- innermost wrapper element -->
+		<img src="http://lorempixel.com/1024/683/animals" alt="First" class="slide" /><!-- slides -->
+		<img src="http://lorempixel.com/1024/683/business" alt="Second" class="slide" />
+		<img src="http://lorempixel.com/1024/683/city" alt="Third" class="slide" />
+	</div>
+	<div class="slider-nav"><!-- "Previous" and "Next" actions -->
+		<button class="slider-previous">Previous</button>
+		<button class="slider-next">Next</button>
+	</div>
+</div>	
+</body>
+</html>
