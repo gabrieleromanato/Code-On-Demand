@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+html, body {
+	margin: 0;
+	padding: 0;
+}
+.slider {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	height: 400px;
+}
+
+.slider-wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.slide {
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0;
+}
+
+.slider-wrapper > .slide:first-child {
+	opacity: 1;
+}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript">
+(function( $ ) {
+	$.fn.slideshow = function( options ) {
+		options = $.extend({
+			slides: ".slide",
+			speed: 3000,
+			easing: "linear"
+			
+		}, options);
+		
+		var timer = null;
+		var index = 0;
+		
+		var slideTo = function( slide, element ) {
+			var $currentSlide = $( options.slides, element ).eq( slide );
+			
+			$currentSlide.stop( true, true ).
+			animate({
+				opacity: 1
+			}, options.speed, options.easing ).
+			siblings( options.slides ).
+			css( "opacity", 0 );	
+			
+		};
+		
+		var autoSlide = function( element ) {
+			timer = setInterval(function() {
+				index++;
+				if( index == $( options.slides, element ).length ) {
+					index = 0;
+				}
+				slideTo( index, element );
+			}, options.speed);	
+		};
+		
+		var startStop = function( element ) {
+			element.hover(function() {
+				clearInterval( timer );
+				timer = null;	
+			}, function() {
+				autoSlide( element );	
+			});
+		};
+		
+		return this.each(function() {
+			var $element = $( this ),
+				$previous = $( options.previous, $element ),
+				$next = $( options.next, $element ),
+				index = 0,
+				total = $( options.slides ).length;
+				
+				$( options.slides, $element ).each(function() {
+					var $slide = $( this );
+					var image = $slide.data( "image" );
+					$slide.css( "backgroundImage", "url(" + image + ")" );
+				});
+				
+				autoSlide( $element );
+				startStop( $element );
+			
+		});
+	};
+	
+	$(function() {
+		$( "#main-slider" ).slideshow();
+		
+	});
+	
+})( jQuery );
+	
+</script>
+</head>
+<body>
+<div class="slider" id="main-slider"><!-- outermost container element -->
+	<div class="slider-wrapper"><!-- innermost wrapper element -->
+		<div class="slide" data-image="http://lorempixel.com/1024/400/animals"></div><!-- slides -->
+		<div class="slide" data-image="http://lorempixel.com/1024/400/business"></div>
+		<div class="slide" data-image="http://lorempixel.com/1024/400/city"></div>
+	</div>
+</div>	
+</body>
+</html>
