@@ -1,0 +1,48 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #8ec1da;
+}
+
+.timeline {
+	margin: 2em auto;
+	font: 14px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	max-width: 500px;
+	background: #fff;
+	color: #333;
+	border-radius: 5px;
+	border: 1px solid #e1e8ed;
+}
+
+.timeline a {
+	color: #0084b4;
+	text-decoration: none;
+}
+
+.timeline a:hover {
+	text-decoration: underline;
+}
+
+.timeline-wrapper {
+	padding: 1em 0;
+	margin: 0;
+	list-style: none;
+}
+
+.timeline-wrapper li {
+	display: block;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid #ccc;	
+}
+
+.timeline .tweet {
+	padding: 0 1em;
+	line-height: 1.3;
+}
+
+.timeline .timestamp {
+	color: #8899a6;
+	font-size: 13px;
+	padding-left: 6px;
+}
