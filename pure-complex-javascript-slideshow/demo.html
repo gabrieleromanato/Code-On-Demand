@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pure complex JavaScript slideshow</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="slideshow.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var slider = new Slideshow( "#slideshow-container" );
+		
+	});
+	
+})();
+</script>
+</head>
+<body>
+<div id="slideshow-container">
+<div id="slideshow">
+ <div id="slideshow-wrapper">
+  <img src="http://lorempixel.com/1024/768/sports" alt="" id="s1" />
+  <img src="http://lorempixel.com/1024/768/food" alt="" id="s2" />
+  <img src="http://lorempixel.com/1024/768/sports" alt="" id="s3" />
+  <img src="http://lorempixel.com/1024/768/food" alt="" id="s4" />
+  <img src="http://lorempixel.com/1024/768/sports" alt="" id="s5" />
+  </div>
+  <a href="#" id="slideshow-previous">Previous</a>
+  <a href="#" id="slideshow-next">Next</a>
+</div>
+<div id="slideshow-thumbs">
+ <a href="#s1"><img src="http://lorempixel.com/80/80/sports" alt="" /></a>
+ <a href="#s2"><img src="http://lorempixel.com/80/80/food" alt="" /></a>
+ <a href="#s3"><img src="http://lorempixel.com/80/80/sports" alt="" /></a>
+ <a href="#s4"><img src="http://lorempixel.com/80/80/food" alt="" /></a>
+ <a href="#s5"><img src="http://lorempixel.com/80/80/sports" alt="" /></a>
+</div>
+   
+</div>
+	
+</body>
+</html>
