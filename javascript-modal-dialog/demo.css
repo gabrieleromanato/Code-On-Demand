@@ -1,0 +1,97 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic);
+
+body {
+	margin: 0;
+	padding: 0;
+	font: 100%/1 'Lato', Arial, sans-serif;
+	color: #333;
+	background: #fff;
+}
+.button {
+	background-color:#f5f5f5;
+	border:1px solid #dcdcdc;
+	color:#666;
+	cursor:pointer;
+	display:inline-block;
+	vertical-align:middle;
+	font-size:13px;
+	font-weight: bold;
+	font-family: 'Lato', Arial, sans-serif;
+	text-transform: uppercase;
+	height:27px;
+	line-height:27px;
+	min-width:54px;
+	padding:0 8px;
+	text-align:center;
+	text-decoration:none;
+	border-radius:2px;
+	background:linear-gradient(top,#f5f5f5,#f1f1f1);
+}
+
+.trigger, #output {
+	padding: 1em;
+	margin: 0;
+}
+
+/*= Confirm Box */
+
+#confirm-wrapper {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000000;
+	background: rgba( 204, 204, 204, 0.6 );
+	display: none;
+	transition: opacity 1s ease-in;
+}
+
+#confirm-box {
+	width: 300px;
+	background: #fff;
+	min-height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0 0 -150px;
+}
+
+#confirm-buttons {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 0;
+	left: 0;
+	padding-bottom: 1em;
+}
+
+#confirm-buttons button {
+	display: inline-block;
+	background: transparent;
+	color: #000;
+	font-size: 1em;
+	font-family: 'Lato', Arial, sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+	text-transform: uppercase;
+	border: 2px solid;
+	margin: 0 0.5em;
+	padding: 0.6em 0;
+	width: 120px;
+}
+
+#confirm-header {
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 2.5em 0 1.5em 0;
+}
+
+#confirm-header:after {
+	content: ' ';
+	display: block;
+	width: 1em;
+	border-top: 1px solid;
+	margin: 0.4em auto;
+}

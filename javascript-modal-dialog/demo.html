@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: modal dialog</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="dialog.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var confirm = document.querySelector( "#confirm" );
+		var output = document.querySelector( "#output" );
+		var confBox = new ConfirmBox( confirm, {
+			ok: function() {
+				output.innerHTML = "OK";
+			},
+			cancel: function() {
+				output.innerHTML = "Cancel";
+			}
+			
+		});
+	});
+	
+})();
+</script>
+</head>
+<body>
+<p class="trigger"><button type="button" id="confirm" data-question="Are you sure?" class="button">Confirm</button></p>
+<div id="output"></div>
+</body>
+</html>
