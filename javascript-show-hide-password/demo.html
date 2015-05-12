@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: show/hide password</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="password-toggler.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var checkbox = document.querySelector( "#show-hide" ),
+			pwd = document.querySelector( "#pwd" ),
+			form = document.querySelector( "#login" );
+			
+			form.addEventListener( "submit", function( e ) {
+				e.preventDefault();
+			}, false);
+			
+			var toggler = new PasswordToggler( checkbox, pwd );
+		
+	});
+	
+})();
+</script>
+</head>
+<body>
+<form action="" method="post" id="login">
+	<div>
+		<input type="password" id="pwd" name="pwd" />
+	</div>
+	<div>
+		<input type="checkbox" id="show-hide" name="show-hide" value="" />
+		<label for="show-hide">Show password</label>
+	</div>
+	<p><input type="submit" value="Login" /></p>
+</form>	
+</body>
+</html>
