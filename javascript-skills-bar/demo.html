@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: skills bar</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="skills-bar.js"></script>
+<script type="text/javascript">
+(function() {
+	document.addEventListener( "DOMContentLoaded", function() {
+		var skills = new SkillsBar( ".skillbar-bar" );
+	});
+})();
+</script>
+</head>
+<body>
+<div class="skillbar-wrapper">
+<div class="skillbar clearfix html5" data-percent="100%">
+	<h4 class="skillbar-title"><span>HTML5</span></h4>
+	<div class="skillbar-bar"></div>
+	<div class="skill-bar-percent">100%</div>
+</div>
+
+<div class="skillbar clearfix css" data-percent="100%">
+	<h4 class="skillbar-title"><span>CSS</span></h4>
+	<div class="skillbar-bar"></div>
+	<div class="skill-bar-percent">100%</div>
+</div>
+
+<div class="skillbar clearfix javascript" data-percent="100%">
+	<h4 class="skillbar-title"><span>JavaScript</span></h4>
+	<div class="skillbar-bar"></div>
+	<div class="skill-bar-percent">100%</div>
+</div>
+
+<div class="skillbar clearfix jquery" data-percent="100%">
+	<h4 class="skillbar-title"><span>jQuery</span></h4>
+	<div class="skillbar-bar"></div>
+	<div class="skill-bar-percent">100%</div>
+</div>
+
+<div class="skillbar clearfix php" data-percent="100%">
+	<h4 class="skillbar-title"><span>PHP</span></h4>
+	<div class="skillbar-bar"></div>
+	<div class="skill-bar-percent">100%</div>
+</div>
+
+<div class="skillbar clearfix wordpress" data-percent="100%">
+	<h4 class="skillbar-title"><span>WordPress</span></h4>
+	<div class="skillbar-bar"></div>
+	<div class="skill-bar-percent">100%</div>
+</div>
+
+<div class="skillbar clearfix server" data-percent="90%">
+	<h4 class="skillbar-title"><span>Server</span></h4>
+	<div class="skillbar-bar"></div>
+	<div class="skill-bar-percent">90%</div>
+</div>
+</div>	
+</body>
+</html>
