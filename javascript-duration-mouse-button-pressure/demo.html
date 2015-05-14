@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: calculate the duration of mouse button pressure</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="mouse-pressure.js"></script>
+<script type="text/javascript">
+(function() {
+	document.addEventListener( "DOMContentLoaded", function() {
+		var pressure = new MousePressure( "#test" );
+	});
+})();
+</script>
+</head>
+<body>
+<div id="test"></div>	
+</body>
+</html>
