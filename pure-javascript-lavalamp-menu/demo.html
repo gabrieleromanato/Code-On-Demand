@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pure JavaScript LavaLamp menu</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="lavalamp.js"></script>
+<script type="text/javascript">
+(function() {
+	document.addEventListener( "DOMContentLoaded", function() {
+		var lava = new LavaLamp( "#navigation" );	
+	});
+})();
+</script>
+</head>
+<body>
+<nav id="navigation">
+	<ul id="menu">
+		<li class="current-menu-item"><a href="">Home</a></li>
+		<li><a href="">About</a></li>
+		<li><a href="">Contacts</a></li>
+	</ul>
+</nav>	
+</body>
+</html>
