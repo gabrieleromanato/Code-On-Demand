@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+	padding: 2em 0;
+	font: 100% Arial, sans-serif;
+}
+
+form {
+	margin: 0 auto;
+	width: 50%;
+}
+
+fieldset {
+	margin: 0 0 1em 0;
+	padding: 0.5em;
+}
+
+legend {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+label {
+	font-weight: bold;
+	display: block;
+}
+
+input {
+	font: 1em Arial, sans-serif;
+	display: block;
+}
+
+textarea {
+	width: 400px;
+	height: 300px;
+	display: block;
+	font: 1em Arial, sans-serif;
+}

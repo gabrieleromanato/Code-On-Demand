@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8" />
+<link rel="stylesheet"  href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="serialize-form.js"></script>
+<script type="text/javascript">
+(function() {
+	document.addEventListener( "DOMContentLoaded", function() {
+		var form = document.getElementById( "test" );
+		form.addEventListener( "submit", function( e ) {
+			e.preventDefault();
+			var serializer = new FormSerializer( this );
+			alert( serializer.toString() );
+		}, false);
+	});
+	
+})();
+</script>
+</head>
+<body>
+<form action="#" method="post" id="test">
+
+	<fieldset>
+	
+		<legend>Input</legend>
+		
+		<div>
+			<label for="name">Name:</label>
+			<input type="text" name="name" id="name" />
+		</div>
+		
+		<div>
+		
+			<label for="website">WWW:</label>
+			<input type="text" name="website" id="website" />
+		
+		</div>
+	
+	</fieldset>
+	
+	<fieldset>
+	
+		<legend>Radio/Checkbox</legend>
+		
+		<div>
+			<label for="js">I use JavaScript</label>
+			<input type="radio" name="js" id="js" value="yes" />
+		</div>
+		
+		<div>
+			<label for="css">I use CSS</label>
+			<input type="checkbox" name="css" id="css" value="yes" />
+		</div>
+
+		
+		
+	
+	</fieldset>
+	
+	<fieldset>
+	
+		<legend>Select</legend>
+		
+		<div>
+		
+			<label for="standard">What's your favorite standard?</label>
+			<select name="standard" id="standard">
+			
+				<option value="">Choose...</option>
+				<option value="CSS">CSS</option>
+				<option value="JavaScript">JavaScript</option>
+				<option value="HTML">HTML</option>
+			
+			</select>
+		
+		</div>
+	
+	</fieldset>
+	
+	<fieldset>
+	
+		<legend>Textarea</legend>
+		
+		<div>
+		
+			<label for="comments">Comments:</label>
+			<textarea id="comments" name="comments" rows="15" cols="20"></textarea>
+		
+		</div>
+	
+	
+	</fieldset>
+	
+	<p><input type="submit" name="btn" id="btn" value="Send" /></p>
+
+</form>
+	
+</body>
+</html>
