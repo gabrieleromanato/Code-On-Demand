@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#location-form {
+	margin: 2em 0;
+	text-align: center;
+}
+
+#location-form label {
+	font-weight: bold;
+	margin-right: 1em;
+}
+
+#location-form input[type="text"] {
+	padding: 0.5em 1em;
+	width: 30%;
+	border: 1px solid #ccc;
+	margin-right: 1em;
+}
+
+#location-form input[type="submit"] {
+	padding: 0.5em 1em;
+	background: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+#map {
+	width: 100%;
+	height: 500px;
+	background: #ccc;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: find a place with Google Maps</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="demo.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="maps-place.js"></script>
+<script type="text/javascript">
+(function() {
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var form = document.querySelector( "#location-form" ),
+			map = document.querySelector( "#map" ),
+			opts = {
+				zoom: 6,  
+				center: new google.maps.LatLng( 40.7033127,-73.979681 ),  
+				mapTypeId: google.maps.MapTypeId.ROADMAP 	
+			},
+			mapper = new Mapper( map, opts );
+			
+			form.addEventListener( "submit", function( e ) {
+				e.preventDefault();
+				mapper.getPlace( document.querySelector( "#location" ).value );
+			}, false);
+	});
+	
+})();
+</script>
+</head>
+<body>
+<form id="location-form" action="#" method="get">
+    <div>
+      <label for="location">Place:</label>
+      <input type="text" name="location" id="location" />
+      <input type="submit" id="address-button" value="Find" />					
+    </div>
+</form>
+<div id="map"></div>	
+</body>
+</html>
