@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: create random string</title>
+<meta charset="utf-8" />
+<script type="text/javascript" src="random-string.js"></script>
+<script type="text/javascript">
+(function() {
+	document.addEventListener( "DOMContentLoaded", function() {
+		var btn = document.querySelector( "#create" ),
+			output = document.querySelector( "#output" );
+			
+			btn.addEventListener( "click", function() {
+				var randStr = new RandomString( 16 );
+				output.innerHTML = randStr.toString();
+			}, false);
+	});
+})();
+</script>
+</head>
+<body>
+<p><button type="button" id="create">Create</button></p>
+<p><code id="output"></code></p>	
+</body>
+</html>
