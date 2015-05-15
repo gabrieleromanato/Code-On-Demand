@@ -1,0 +1,25 @@
+.image-wrap {
+	width: 200px;
+	height: 200px;
+	margin: 2em auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.image-wrap img {
+	top: -50px;
+    left: -150px;
+    height: 400px;
+    width: 400px;
+    opacity: 0.5;
+    transition: all 500ms ease-in;
+    position: absolute;	
+}
+.image-wrap img:hover {
+	top: 0;
+	left: 0;
+	opacity: 1;
+	height: 200px;
+	width: 200px;
+	
+}
