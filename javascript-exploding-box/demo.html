@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: exploding box</title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+#test {
+	width: 100px; 
+	height: 100px; 
+	background: #c30;
+	cursor: pointer;
+	transition: all 300ms ease-out;
+}
+</style>
+<script type="text/javascript">
+(function() {
+	
+	var explode = function( element, speed, callback ) {
+		var width = window.innerWidth,
+			height = window.innerHeight;
+			
+			element.style.width = width + "px";
+			element.style.height = height + "px";
+			element.style.opacity = 0;
+			
+			setTimeout(function() {
+				callback( element );
+			}, speed);	
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var test = document.querySelector( "#test" );
+		test.addEventListener( "click", function() {
+			explode( test, 300, function( el ) {
+				el.parentNode.removeChild( el );
+			});
+		}, false);
+	});
+	
+})();
+</script>
+</head>
+<body>
+<div id="test"></div>	
+</body>
+</html>
