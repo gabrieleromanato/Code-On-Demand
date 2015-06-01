@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: 100%/1 Palatino, Cambria, serif;
+}
+
+#site {
+	width: 100%;
+	position: relative;
+	transition: all 500ms ease-in;
+}
+
+.page-section {
+	text-align: center;
+	position: relative;
+}
+
+.page-section h2 {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	color: #fff;
+	font-size: 4em;
+	font-weight: normal;
+	margin: -0.5em 0 0 0;
+	text-transform: uppercase;
+}
+
+.page-section:nth-child(1) {
+	background: #333;
+}
+.page-section:nth-child(2) {
+	background: #08c;
+}
+.page-section:nth-child(3) {
+	background: #666;
+}
+
+/*= Parallax */
+
+#parallax-navigation {
+	position: fixed;
+	top: 50%;
+	z-index: 10000000;
+	width: 12px;
+	right: 1em;
+}
+
+#parallax-navigation a {
+	display: block;
+	width: 12px;
+	height: 12px;
+	text-indent: -9999em;
+	transition: all 400ms ease-in;
+	background: #fff;
+	border-radius: 50%;
+	margin-bottom: 0.9em;
+}
+
+#parallax-navigation a:hover,
+#parallax-navigation a.parallax-navigation-current {
+	background: #f30000;
+}
