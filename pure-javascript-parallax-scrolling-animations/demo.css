@@ -1,0 +1,111 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: 100%/1 Palatino, Cambria, serif;
+}
+
+#site {
+	width: 100%;
+	position: relative;
+	transition: all 500ms ease-in;
+}
+
+.page-section {
+	text-align: center;
+	position: relative;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: #333;
+}
+
+.page-section h2 {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	color: #fff;
+	font-size: 4em;
+	font-weight: normal;
+	margin: -0.5em 0 0 0;
+	text-transform: uppercase;
+	opacity: 0;
+}
+
+#site > .page-section:first-child h2 {
+	opacity: 1;
+}
+
+.page-section:nth-child(1) {
+	background-image: url(images/1.jpg);
+}
+.page-section:nth-child(2) {
+	background-image: url(images/2.jpg);
+}
+.page-section:nth-child(3) {
+	background-image: url(images/3.jpg);
+}
+
+/*= Parallax */
+
+#parallax-navigation {
+	position: fixed;
+	top: 50%;
+	z-index: 10000000;
+	width: 12px;
+	right: 1em;
+}
+
+#parallax-navigation a {
+	display: block;
+	width: 12px;
+	height: 12px;
+	text-indent: -9999em;
+	transition: all 400ms ease-in;
+	background: #fff;
+	border-radius: 50%;
+	margin-bottom: 0.9em;
+}
+
+#parallax-navigation a:hover,
+#parallax-navigation a.parallax-navigation-current {
+	background: #f30000;
+}
+
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+       transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+     transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+     transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+     transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+    animation-name: bounceIn;
+    animation-duration: .75s;
+    animation-fill-mode: both;
+}
