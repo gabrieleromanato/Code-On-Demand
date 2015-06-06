@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript: form validation info tips</title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+#register {
+	max-width: 400px;
+	margin: 1em;
+}	
+
+.form-row {
+	margin-bottom: 1em;
+	position: relative;
+}
+
+.form-row input {
+	display: block;
+	width: 80%;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 7px;
+}
+
+.info {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 20px;
+}
+
+.mark {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background: #08c;
+	color: #fff;
+	border-radius: 50%;
+	cursor: help;
+	font-size: 13px;
+}
+
+.info-tip {
+	display: none;
+	background: #000;
+	color: #fff;
+	padding: 8px;
+	width: 270px;
+	font-size: 14px;
+	line-height: 1.4;
+	position: absolute;
+	top: -10px;
+	right: -300px;
+	z-index: 1000000000;
+	opacity: 0;
+	transition: opacity 700ms ease-in;
+}
+
+.info-tip:before {
+	content: ' ';
+	display: block;
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent; 
+	border-right: 6px solid #000;
+	position: absolute;
+	top: 50%;
+	margin-top: -6px;
+	left: -6px; 
+}
+</style>
+<script type="text/javascript">
+(function() {
+	var showTip = function( element ) {
+		element.style.display = "block";
+		element.style.opacity = 1;	
+	};
+	
+	var hideTip = function( element ) {
+		element.style.opacity = 0;
+		setTimeout(function() {
+			element.style.display = "none";
+		}, 700);
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		var markers = document.querySelectorAll( ".mark" );
+		for( var i = 0; i < markers.length; ++i ) {
+			var mark = markers[i];
+			
+			mark.addEventListener( "mouseover", function() {
+				showTip( this.nextElementSibling );	
+			}, false);
+			
+			mark.addEventListener( "mouseout", function() {
+				hideTip( this.nextElementSibling );	
+			}, false);
+		}
+	});
+})();
+</script>
+</head>
+<body>
+<form action="" method="post" id="register">
+	<div class="form-row">
+		<input type="text" name="username" placeholder="Username" />
+		<div class="info">
+			<span class="mark">?</span>
+			<div class="info-tip">Only alphanumeric characters</div>
+		</div>
+	</div>
+	<div class="form-row">
+		<input type="password" name="pwd" placeholder="Password" />
+		<div class="info">
+			<span class="mark">?</span>
+			<div class="info-tip">From 8 to 20 characters</div>
+		</div>
+	</div>
+</form>	
+</body>
+</html>
