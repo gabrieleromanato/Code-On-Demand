@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS: styling a Google Maps InfoWindow</title>
+<meta charset="utf-8" />
+<style type="text/css">
+#map {
+  width: 600px;
+  height: 500px;
+  margin: 2em auto;
+}
+
+#pic {
+  width: 400px;
+  height: 190px;
+  padding: 5px;
+}
+
+#pic p {
+  margin: 0;
+  text-align: center;
+  font: italic small Arial, sans-serif;
+  float: left;
+}
+
+#pic img {
+  display: block;
+  width: 268px;
+  height: 188px;
+  float: left;
+  padding-right: 5px;
+}
+</style>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+(function() {
+
+    var map, infoWindow, gMap = google.maps;
+
+
+    window.onload = function() {
+    
+    
+        var options = {  
+          zoom: 10,
+          center: new gMap.LatLng(42.1118, 14.7082),  
+          mapTypeId: gMap.MapTypeId.ROADMAP  
+        };  
+    
+        map = new gMap.Map(document.getElementById('map'), options);
+        
+        
+        var marker = new gMap.Marker({
+          position: new gMap.LatLng(42.1118, 14.7082),
+          map: map,
+          title: 'Click to see a picture of Vasto, my hometown'
+        });
+        
+        
+               
+        
+        gMap.event.addListener(marker, 'click', function() {
+        
+        
+            if (!infoWindow) {
+               infoWindow = new gMap.InfoWindow();
+            }
+            
+            
+             var img = '<div id="pic"><img src="https://lh6.googleusercontent.com/_rhuioznu6Us/TU-MTMhCYGI/AAAAAAAAAQs/WJw-khN02AI/s144/vasto-1967.jpeg" width="268" height="188" /><p>Vasto Marina, 1967</p></div>';
+            
+             infoWindow.setContent(img);
+             infoWindow.open(map, marker);
+             
+
+      
+        
+        
+        });
+
+
+    
+    };
+
+
+})();
+
+</script>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+</body>
+</html>
+
