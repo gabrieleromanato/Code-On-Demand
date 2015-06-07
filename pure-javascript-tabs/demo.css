@@ -1,0 +1,51 @@
+#site {
+	margin: 1em auto;
+	max-width: 960px;
+}
+
+#tabs-nav {
+	margin: 0;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+}
+
+#tabs-nav a {
+	padding: 0.5em 1.6em;
+	float: left;
+	border-width: 1px 0 0 1px;
+	border-style: solid;
+	border-color: #ddd;
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+
+#tabs-nav > a:last-child {
+	border-width: 1px 1px 0 1px;	
+}
+
+#tabs-nav a:hover,
+#tabs-nav a.current-tab {
+	background: #f5f5f5;
+	border-color: #000 #ddd transparent #000;
+	
+}
+
+#tabs-content {
+	text-align: center;
+}
+
+#tabs-content p {
+	line-height: 1.4;
+}
+
+#tabs-content .tab {
+	display: none;
+	opacity: 0;
+	transition: opacity 500ms ease-in;
+}
+
+#tabs-content > .tab:first-child {
+	display: block;
+	opacity: 1;
+}
