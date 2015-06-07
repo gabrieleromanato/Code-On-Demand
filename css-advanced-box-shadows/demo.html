@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS: advanced box shadows</title>
+<meta charset="utf-8" />
+<style type="text/css" media="screen">
+body {
+	margin: 2em;
+	background: #ccc;
+}
+
+#container {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	margin: 0 auto;
+	max-width: 840px;
+}
+
+.box {
+	position: relative;
+	float: left;
+	width: 30%;
+	height: 150px;
+	padding: 0;
+	border: 1px solid #efefef;
+	margin: 0 2.3333% 30px 0;
+	background: #fff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+}
+
+#container > .box:last-child {
+	margin: 0 0 30px 0;
+	width: 32.3333%;
+}
+
+.box:before,
+.box:after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	width: 70%;
+	max-width: 300px; 
+	max-height: 100px;
+	height: 55%;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	transform: skew(-15deg) rotate(-6deg); 
+}
+
+.box:after {
+	left: auto;
+	right: 10px;
+	transform: skew(15deg) rotate(6deg);
+}
+</style>
+</head>
+<body>
+<div id="container">
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>	
+</body>
+</html>
