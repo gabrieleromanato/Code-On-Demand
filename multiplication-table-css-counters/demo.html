@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Multiplication table with CSS counters</title>
+<style type="text/css" media="screen">
+body {margin: 2em; background: #fff; color: #000; font-family: Arial, sans-serif;}
+
+table {
+width: 600px;
+border: 1px solid;
+table-layout: fixed;
+border-collapse: collapse;
+margin: 0 auto;
+}
+
+caption {text-transform: uppercase;
+font-weight: bold; margin: 0; padding: 0.2em 0; text-align: center;}
+
+td {
+border: 1px solid;
+width: 60px;
+height: 60px;
+vertical-align: middle;
+text-align: center;
+}
+
+/* Counters */
+
+tr#one {
+counter-reset: one;
+}
+
+tr#one>td:before {
+counter-increment: one;
+content: counter(one);
+}
+
+tr#two {
+counter-reset: two;
+}
+
+tr#two>td:before {
+counter-increment: two 2;
+content: counter(two);
+}
+
+tr#three {counter-reset: three;}
+tr#three>td:before {
+counter-increment: three 3;
+content: counter(three);
+}
+
+tr#four {counter-reset: four;}
+tr#four>td:before {
+counter-increment: four 4;
+content: counter(four);
+}
+
+
+tr#five {counter-reset: five;}
+tr#five>td:before {
+counter-increment: five 5;
+content: counter(five);
+}
+
+
+tr#six {counter-reset: six;}
+tr#six>td:before {
+counter-increment: six 6;
+content: counter(six);
+}
+
+
+tr#seven {counter-reset: seven;}
+tr#seven>td:before {
+counter-increment: seven 7;
+content: counter(seven);
+}
+
+
+tr#eight {counter-reset: eight;}
+tr#eight>td:before {
+counter-increment: eight 8;
+content: counter(eight);
+}
+
+
+tr#nine {counter-reset: nine;}
+tr#nine>td:before {
+counter-increment: nine 9;
+content: counter(nine);
+}
+
+
+tr#ten {counter-reset: ten;}
+tr#ten>td:before {
+counter-increment: ten 10;
+content: counter(ten);
+}
+</style>
+</head>
+<body>
+
+<table>
+<caption>Multiplication table</caption>
+
+<tr id="one">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="two">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="three">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="four">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="five">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="six">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="seven">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="eight">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="nine">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr id="ten">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+
+</table>
+
+</body>
+</html>
