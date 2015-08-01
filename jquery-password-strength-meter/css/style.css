@@ -1,0 +1,42 @@
+#signup label {
+	display: block;
+	margin-bottom: 0.4em;
+	font-weight: bold;
+}
+
+#pwd {
+	display: block;
+	width: 200px;
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 0.6em 0;
+}
+
+#pwd:focus {
+	outline: none;
+}
+
+#password-meter {
+	width: 202px;
+	height: 8px;
+	background: #ccc;
+	margin-top: 1em;
+}
+
+#password-meter-progress {
+	height: 100%;
+	width: 0%;
+	transition: width 400ms linear;
+}
+
+#password-meter-progress.low {
+	background: #c00;
+}
+
+#password-meter-progress.medium {
+	background: #f50;
+}
+
+#password-meter-progress.high {
+	background: #080;
+}
